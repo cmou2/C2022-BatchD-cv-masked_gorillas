@@ -1,0 +1,1058 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Mushroom AI Classification</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="{{ url_for('static', filename='assets/img/ai camp logo.jpg') }}" rel="icon">
+  <link href="{{ url_for('static', filename='assets/img/apple-touch-icon.png') }}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{{ url_for('static', filename='assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='assets/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='assets/vendor/boxicons/css/boxicons.min.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='assets/vendor/glightbox/css/glightbox.min.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='assets/vendor/remixicon/remixicon.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='assets/vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
+  <!--<link href="{{ url_for('static', filename='assets/vendor/aos/aos.css') }}" rel="stylesheet">-->
+
+  <!-- Template Main CSS File -->
+  <!--<link href="assets/css/style.css" rel="stylesheet">-->
+  
+  <!-- Template Main CSS File -->
+  <link href="{{ url_for('static', filename='assets/css/style.css') }}" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Tempo - v4.8.0
+  * Template URL: https://bootstrapmade.com/tempo-free-onepage-bootstrap-theme/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+<!--   header d-flex align-items-center fixed-top -->
+  <header id="header" class="fixed-top header-inner-pages">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <h1 class="logo"><a href="index.html">Masked Gorillas</a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+<!--     <style> 
+        .navbar-custom {
+            background-color: black;
+        }
+    </style> -->
+<!-- op -->
+      <nav id="navbar" class="navbar">
+        <ul>
+<!--      <li><a href="/">Position fixed</a></li> -->
+          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+          <li><a class="nav-link scrollto" href="#about">About</a></li>
+          <li><a class="nav-link scrollto" href="#pipeline">Pipeline</a></li>
+          <li><a class="nav-link scrollto" href="#data">Data</a></li>
+          <li><a class="nav-link scrollto" href="#model">Model</a></li>
+          <li><a class="nav-link scrollto" href="#evaluation">Evaluation</a></li>
+          <li><a class="nav-link scrollto " href="#cta">Conclusion</a></li>
+          <li><a class="nav-link scrollto " href="#team">Our Team</a></li>
+<!--   </a> -->
+          <!--
+          <li><a href="blog.html">Blog</a></li>
+          -->
+    <!--      
+          <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="#">Drop Down 1</a></li>
+              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
+                <ul>
+                  <li><a href="#">Deep Drop Down 1</a></li>
+                  <li><a href="#">Deep Drop Down 2</a></li>
+                  <li><a href="#">Deep Drop Down 3</a></li>
+                  <li><a href="#">Deep Drop Down 4</a></li>
+                  <li><a href="#">Deep Drop Down 5</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Drop Down 2</a></li>
+              <li><a href="#">Drop Down 3</a></li>
+              <li><a href="#">Drop Down 4</a></li>
+            </ul> 
+          </li>
+          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>--> 
+        </ul> 
+        <i class="bi bi-list mobile-nav-toggle"></i> 
+<!--       <script>
+        var prevScrollpos = window.pageYOffset;
+        window.onscroll = function() {
+        var currentScrollPos = window.pageYOffset;
+          if (prevScrollpos > currentScrollPos) {
+            document.getElementById("navbar").style.top = "0";
+          } else {
+            document.getElementById("navbar").style.top = "-50px";
+          }
+          prevScrollpos = currentScrollPos;
+        }
+      </script>        -->
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero">
+    <div class="hero-container">
+      <h3>Welcome to your<strong> Fung-Guide</strong> to mushrooms</h3>
+      <h1>Mushroom AI Classification</h1>
+      <h2>It'll grow on you!</h2>
+      <!-- work here-->
+      <!-- Button -->
+      <a class="mb-0" id='seefood_button'>
+        <form id='seefood_form' method=post enctype=multipart/form-data>
+          <input id="seefood_input_field" name="file" type="file" onchange="this.form.submit();" hidden/>
+        </form>
+        <button href="#" target="_blank" class="btn-get-started scrollto btn-text" style="color:black">
+        <i class="fas fa-camera pr-2 left" aria-hidden="true"></i> Click to detect mushrooms
+        </button>
+      </a>
+      
+      <!--_<a href="#about" class="btn-get-started scrollto">Learn More</a>-->
+      
+      
+    </div>
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>About</h2>
+          <h3>Learn More About<span> Our AI Detection</span></h3>
+          <p>We built an AI model that classifies a mushroom's genus. &#127812 </p>
+        </div>
+
+        <div class="row content">
+          <div class="col-lg-6">
+            <p>
+              The model works by taking in an image of a mushroom and it will shortly return its predicted genus.<br> <br> <b>3 simple steps:</b>
+            </p>
+            <ul>
+              <li><i class="ri-check-double-line"></i>Take or find a picture of a mushroom</li>
+              <li><i class="ri-check-double-line"></i>Upload your image</li>
+              <li><i class="ri-check-double-line"></i>Learn the genus of the mushroom</li>
+            </ul>
+          </div>
+          <div class = "col-lg-6 pt-4 pt-lg-0">
+            <p>
+              <b>Why did we choose to make this model? </b> With more people staying home for work, there is a growing need to be surrounded by nature. A popular way to get out of the house is to go out into nature and explore, where you may see numerous species of mushrooms. However, as mushroom encounters increase, misidentification by novice mushroom explorers have increased as well. This is where our Mushroom classification AI will be most useful in helping prevent most of these misidentifications.
+            </p>
+               <a href="#" class="btn-learn-more">Learn More</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <!-- End About Section -->
+
+
+    <!-- ======= Pipeline Section ======= -->
+    
+    <section id="pipeline" class="features">
+      <div class="container">
+        <div class="section-title">
+          <h2>Pipeline</h2>
+          </div>
+        <div class="container py-5">
+    <div class="main-timeline-2">
+      <div class="timeline-2 left-2">
+        <div class="card">
+          <!--<img src="../Tempo/assets/img/mushroom-tl-bg0.webp" class="card-img-top"
+            alt="Responsive image">-->
+          <img src="{{ url_for('static', filename='assets/img/mushroom-tl-bg0.webp')}}"class="card-img-top" alt="Responsive image">
+          <div class="card-body p-4">
+            <h4 class="fw-bold mb-4">Brainstorming</h4>
+            <p class="text-muted mb-4"><i class="far fa-clock" aria-hidden="true"></i> AUG 8 - 11 2022</p>
+            <p class="mb-0">While brainstorming ideas for our project, we came up with multiple different potential AI's to develop. Although, we ultimately landed on the consensus to code a mushroom identification program. Some other AI's were: a license plate detection program; a sign language translator; a flower identifier; a smile detection program; and a program that detects if you are driving correctly within the lanes.</p>
+          </div>
+        </div>
+      </div>
+      <div class="timeline-2 right-2">
+        <div class="card">
+          <!--<img src="../static/assets/img/mushroom-tl-bg1.webp" class="card-img-top"
+            alt="Responsive image">-->
+          <img src="{{ url_for('static', filename='assets/img/mushroom-tl-bg1.webp')}}" class="card-img-top" alt="Responsive image">
+          <div class="card-body p-4">
+            <h4 class="fw-bold mb-4">Data Collection and Preparation</h4>
+            <p class="text-muted mb-4"><i class="far fa-clock" aria-hidden="true"></i> AUG 12 - 15 2022</p>
+            <p class="mb-0"> We used Kaggle, a scientific logging website, to gather images of mushrooms within certain genera; and then used Roboflow to label and annotate the images. Finally, we got about 320 images for each class, 2800 images in total.</p>
+          </div>
+        </div>
+      </div>
+      <div class="timeline-2 left-2">
+        <div class="card">
+          <!--<img src="../Tempo/assets/img/mushroom-tl-bg2.webp" class="card-img-top"
+            alt="Responsive image">-->
+          <img src="{{ url_for('static', filename='assets/img/mushroom-tl-bg2.webp')}}" class="card-img-top" alt="Responsive image">
+          <div class="card-body p-4">
+            <h4 class="fw-bold mb-4">Model Training</h4>
+            <p class="text-muted mb-4"><i class="far fa-clock" aria-hidden="true"></i> AUG 16 - 18 2022</p>
+            <p class="mb-0">During the Model Training phase, we imported our results from datasets from Roboflow to begin training our AI. Using YOLOv5, we were able to train our data in epochs. We ran 250 epochs on our datasets and then had Weights & Biases print the metrics/results.</p>
+          </div>
+        </div>
+      </div>
+      <div class="timeline-2 right-2">
+        <div class="card">
+          <!--<img src="../Tempo/assets/img/mushroom-tl-bg3.webp" class="card-img-top"
+            alt="Responsive image">-->
+          <img src="{{ url_for('static', filename='assets/img/mushroom-tl-bg3.webp')}}" class="card-img-top" alt="Responsive image">
+          <div class="card-body p-4">
+            <h4 class="fw-bold mb-4">Model Evaluation and Iteration</h4>
+            <p class="text-muted mb-4"><i class="far fa-clock" aria-hidden="true"></i> AUG 18 - 19 2022</p>
+            <p class="mb-0">During our Model Evaluation phase, we used the metrics (Confusion Matrix, Loss Charts, and Confidence Curves) from YOLOv5 to first sort out any issues with our model. This included removing a class that was appearing as duplicated, etc. In addition, we also were able to test our model using images that we web scraped using SerpAPI.</p>
+          </div>
+        </div>
+      </div>
+      <div class="timeline-2 left-2">
+        <div class="card">
+          <!--<img src="../Tempo/assets/img/mushroom-tl-bg4.webp" class="card-img-top"
+            alt="Responsive image">-->
+          <img src="{{ url_for('static', filename='assets/img/mushroom-tl-bg4.webp')}}" class="card-img-top" alt="Responsive image">
+          <div class="card-body p-4">
+            <h4 class="fw-bold mb-4">Model Deployment</h4>
+            <p class="text-muted mb-4"><i class="far fa-clock" aria-hidden="true"></i> AUG 24 2022</p>
+            <p class="mb-0">During our Model Deployment phase, we were able to find a BootstrapMade template for our website and customize it to fit our project needs. We will also be implementing a method for users to upload their files and images to our website to use the Mushroom Classification AI.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+      </div>
+    </section>
+    <!-- End Features Section -->
+    
+    <!-- ======= Data Section ======= -->
+    <section id="data" class="services">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Our Data</h2>
+          <h3>How did we collect and prepare our <span>Data?</span></h3>
+          
+        </div>
+
+        <div class="row">
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+            <div class="icon-box">
+              <div class="icon"><i class="bi bi-card-image"></i></div>
+              <h4 class="title"><a href="https://www.kaggle.com/">Kaggle</a></h4>
+              <p class="description">We used a prexisting Kaggle Dataset as our first and primary source of mushroom images to  our AI.</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+            <div class="icon-box">
+              <div class="icon"><i class="bi bi-search"></i></div>
+              <h4 class="title"><a href="https://www.serpapi.com/">Google SerpAPI</a></h4>
+              <p class="description">In addition to our Kaggle dataset, we supplemented it by using Google SerpAPI to web scrape additional images to evaluate our model's performance.</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+            <div class="icon-box">
+              <div class="icon"><i class="bi bi-collection"></i></div>
+              <h4 class="title"><a href="https://www.colab.research.google.com
+">Preparation</a></h4>
+              <p class="description">In order to prepare our images for our AI's training, we uploaded our dataset to Roboflow, and assigned hundreds of images to each of our team members to annotate. To which, we would then upload to Google Colab where our model was located.</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+            <div class="icon-box">
+              <div class="icon"><i class="bi bi-robot"></i></div>
+              <h4 class="title"><a href="https://www.roboflow.com/">Roboflow</a></h4>
+              <p class="description">With Roboflow, our team was able to annotate our massive dataset, then Roboflow separated our images into a training, testing, and validation set. Finally, it resized and auto-oriented our images for training.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+    <!-- End Data Section -->
+      
+    <!-- Model Section -->
+      <section id="model" class="about">
+      <div class="container">
+        <div class="section-title">
+          <h2>Modeling</h2>
+          <h3><span>YOLOv5</span></h3>
+          <p></p>
+        </div>
+       
+        <div class="row">
+
+          <div class="col-lg-6 align-self-baseline">
+            <img src="{{ url_for('static', filename='assets/img/yolo.png')}}"  class="img-fluid"  alt="">
+            <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="glightbox play-btn mb-4"></a>
+          </div>
+
+          <div class="col-lg-6 pt-3 pt-lg-0 content">
+            <h3>YOLOv5</h3>
+            <p class="fst-italic">
+              YOLOv5, or "you only look once", is an object detection algorithm which divides an image into a grid system that will detect an object within itself.
+            </p>
+            <ul>
+              <li><i class="ri-check-double-line"></i>Takes an image as input</li>
+              <li><i class="ri-check-double-line"></i>Extracts region proposals </li>
+              <li><i class="ri-check-double-line"></i>Computes CNN features</li>
+              <li><i class="ri-check-double-line"></i>Classifies regions</li>
+            </ul>
+            <p>
+            </p>
+          </div>
+
+        </div>
+        </div>  
+      </section>
+    <!-- End Model Section -->
+    
+    
+    <!-- Evaluation Section -->
+    <section id="evaluation" class="team">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Evaluation</h2>
+          <h3>Model <span>Performance</span></h3>
+          <p></p>
+        </div>
+
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            <div class="member">
+              <div class="member-img">
+<!--                 <img src="assets/img/confusion matrix.jpg" class="img-fluid" width = 400 alt=""> -->
+                 <img src="{{ url_for('static', filename='assets/img/confusion matrix.jpg')}}"  class="img-fluid" width = 400 alt="">
+              </div>
+              <div class="member-info">
+                <style>
+                    span{text-align: left;}
+                </style>
+                <h4>Confusion Matrix</h4>
+                <span><b>Confusion matrix:</b> used to evaluate the performance of a classification model by comparing target vs. predicted values <br>
+
+The table to the above is the confusion matrix for our model. The left side of the table has the predicted values and the bottom side has the true values. Each of the dark blue boxes shows that the AI’s prediction matched its true value the majority of the time with only a few occasional errors. <br>
+There is a <b>90.67%</b> accuracy.
+</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            <div class="member">
+              <div class="member-img">
+<!--                 <img src="assets/img/" class="img-fluid" alt=""> -->
+                <img src="{{ url_for('static', filename='assets/img/precision recall (Results).jpg')}}"  class="img-fluid"  alt="">
+              </div>
+              <div class="member-info">
+                <h4>Precision and Recall</h4>
+                <span><b>Precision:</b> measures the correct positive predictions. <br>
+<b>Recall:</b> measures the actual positive labels that were correctly classified in the model <br>
+
+The precision and recall graphs curve upwards, showing that the accuracy is increasing
+</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            <div class="member">
+              <div class="member-img">
+            <!--    <img src="assets/img/val_loss.jpg" class="img-fluid" alt=""> -->
+                <img src="{{ url_for('static', filename='assets/img/val_loss.jpg')}}"  class="img-fluid" alt="">
+
+              </div>
+              <div class="member-info">
+                <h4>Validation Loss</h4>
+                <span><b>Validation loss:</b> calculated error after running the validation set <br>
+<b>Box_loss:</b> measures how closely the model can put a bounding box over the object<br>
+<b>Cls_loss:</b> measures how accurately the model can split an image into smaller areas<br>
+
+The downward sloping graphs show that the loss is decreasing.
+</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            <div class="member">
+              <div class="member-img">
+              <!--  <img src="assets/img/mAP.jpg" class="img-fluid" alt=""> -->
+                <img src="{{ url_for('static', filename='assets/img/mAP.jpg')}}"  class="img-fluid" alt="">
+
+              </div>
+              <div class="member-info">
+                <h4>mAP</h4>
+                <span><b>mAP:</b> mean average precision<br>
+                  The graphs have upwards sloping curves, which shows that the model is becoming more stable and consistent.
+</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+    <!-- End Evaluation Section -->
+
+    <!-- ======= Portfolio Section ======= -->
+<!--     <section id="portfolio" class="portfolio">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Portfolio</h2>
+          <h3>Check our <span>Portfolio</span></h3>
+          <p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at voluptas atque vitae autem.</p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-12 d-flex justify-content-center">
+            <ul id="portfolio-flters">
+              <li data-filter="*" class="filter-active">All</li>
+              <li data-filter=".filter-app">App</li>
+              <li data-filter=".filter-card">Card</li>
+              <li data-filter=".filter-web">Web</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="row portfolio-container">
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+            <img src="assets/img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>App 1</h4>
+              <p>App</p>
+              <a href="assets/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 1"><i class="bx bx-plus"></i></a>
+              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+            <img src="assets/img/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Web 3</h4>
+              <p>Web</p>
+              <a href="assets/img/portfolio/portfolio-2.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 3"><i class="bx bx-plus"></i></a>
+              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+            <img src="assets/img/portfolio/portfolio-3.jpg" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>App 2</h4>
+              <p>App</p>
+              <a href="assets/img/portfolio/portfolio-3.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 2"><i class="bx bx-plus"></i></a>
+              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+            <img src="assets/img/portfolio/portfolio-4.jpg" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Card 2</h4>
+              <p>Card</p>
+              <a href="assets/img/portfolio/portfolio-4.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 2"><i class="bx bx-plus"></i></a>
+              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+            <img src="assets/img/portfolio/portfolio-5.jpg" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Web 2</h4>
+              <p>Web</p>
+              <a href="assets/img/portfolio/portfolio-5.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 2"><i class="bx bx-plus"></i></a>
+              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+            <img src="assets/img/portfolio/portfolio-6.jpg" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>App 3</h4>
+              <p>App</p>
+              <a href="assets/img/portfolio/portfolio-6.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 3"><i class="bx bx-plus"></i></a>
+              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+            <img src="assets/img/portfolio/portfolio-7.jpg" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Card 1</h4>
+              <p>Card</p>
+              <a href="assets/img/portfolio/portfolio-7.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 1"><i class="bx bx-plus"></i></a>
+              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+            <img src="assets/img/portfolio/portfolio-8.jpg" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Card 3</h4>
+              <p>Card</p>
+              <a href="assets/img/portfolio/portfolio-8.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 3"><i class="bx bx-plus"></i></a>
+              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+            <img src="assets/img/portfolio/portfolio-9.jpg" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Web 3</h4>
+              <p>Web</p>
+              <a href="assets/img/portfolio/portfolio-9.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 3"><i class="bx bx-plus"></i></a>
+              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Portfolio Section -->
+
+    <!-- ======= Pricing Section ======= -->
+<!--     <section id="pricing" class="pricing">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Pricing</h2>
+          <h3>Our Competing <span>Prices</span></h3>
+          <p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at voluptas atque vitae autem.</p>
+        </div>
+
+        <div class="row">
+
+          <div class="col-lg-4 col-md-6">
+            <div class="box">
+              <h3>Free</h3>
+              <h4><sup>$</sup>0<span> / month</span></h4>
+              <ul>
+                <li>Aida dere</li>
+                <li>Nec feugiat nisl</li>
+                <li>Nulla at volutpat dola</li>
+                <li class="na">Pharetra massa</li>
+                <li class="na">Massa ultricies mi</li>
+              </ul>
+              <div class="btn-wrap">
+                <a href="#" class="btn-buy">Buy Now</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mt-4 mt-md-0">
+            <div class="box recommended">
+              <span class="recommended-badge">Recommended</span>
+              <h3>Business</h3>
+              <h4><sup>$</sup>19<span> / month</span></h4>
+              <ul>
+                <li>Aida dere</li>
+                <li>Nec feugiat nisl</li>
+                <li>Nulla at volutpat dola</li>
+                <li>Pharetra massa</li>
+                <li class="na">Massa ultricies mi</li>
+              </ul>
+              <div class="btn-wrap">
+                <a href="#" class="btn-buy">Buy Now</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mt-4 mt-lg-0">
+            <div class="box">
+              <h3>Developer</h3>
+              <h4><sup>$</sup>29<span> / month</span></h4>
+              <ul>
+                <li>Aida dere</li>
+                <li>Nec feugiat nisl</li>
+                <li>Nulla at volutpat dola</li>
+                <li>Pharetra massa</li>
+                <li>Massa ultricies mi</li>
+              </ul>
+              <div class="btn-wrap">
+                <a href="#" class="btn-buy">Buy Now</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Pricing Section -->
+
+    <!-- ======= F.A.Q Section ======= -->
+<!--    <section id="faq" class="faq">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>F.A.Q</h2>
+          <h3>Frequently Asked <span>Questions</span></h3>
+        </div>
+
+        <ul class="faq-list">
+
+          <li>
+            <div data-bs-toggle="collapse" class="collapsed question" href="#faq1">Non consectetur a erat nam at lectus urna duis? <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
+            <div id="faq1" class="collapse" data-bs-parent=".faq-list">
+              <p>
+                Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non curabitur gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non.
+              </p>
+            </div>
+          </li>
+
+          <li>
+            <div data-bs-toggle="collapse" href="#faq2" class="collapsed question">Feugiat scelerisque varius morbi enim nunc faucibus a pellentesque? <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
+            <div id="faq2" class="collapse" data-bs-parent=".faq-list">
+              <p>
+                Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.
+              </p>
+            </div>
+          </li>
+
+          <li>
+            <div data-bs-toggle="collapse" href="#faq3" class="collapsed question">Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi? <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
+            <div id="faq3" class="collapse" data-bs-parent=".faq-list">
+              <p>
+                Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus pulvinar elementum integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum tellus pellentesque eu tincidunt. Lectus urna duis convallis convallis tellus. Urna molestie at elementum eu facilisis sed odio morbi quis
+              </p>
+            </div>
+          </li>
+
+          <li>
+            <div data-bs-toggle="collapse" href="#faq4" class="collapsed question">Ac odio tempor orci dapibus. Aliquam eleifend mi in nulla? <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
+            <div id="faq4" class="collapse" data-bs-parent=".faq-list">
+              <p>
+                Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.
+              </p>
+            </div>
+          </li>
+
+          <li>
+            <div data-bs-toggle="collapse" href="#faq5" class="collapsed question">Tempus quam pellentesque nec nam aliquam sem et tortor consequat? <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
+            <div id="faq5" class="collapse" data-bs-parent=".faq-list">
+              <p>
+                Molestie a iaculis at erat pellentesque adipiscing commodo. Dignissim suspendisse in est ante in. Nunc vel risus commodo viverra maecenas accumsan. Sit amet nisl suscipit adipiscing bibendum est. Purus gravida quis blandit turpis cursus in
+              </p>
+            </div>
+          </li>
+
+          <li>
+            <div data-bs-toggle="collapse" href="#faq6" class="collapsed question">Tortor vitae purus faucibus ornare. Varius vel pharetra vel turpis nunc eget lorem dolor? <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
+            <div id="faq6" class="collapse" data-bs-parent=".faq-list">
+              <p>
+                Laoreet sit amet cursus sit amet dictum sit amet justo. Mauris vitae ultricies leo integer malesuada nunc vel. Tincidunt eget nullam non nisi est sit amet. Turpis nunc eget lorem dolor sed. Ut venenatis tellus in metus vulputate eu scelerisque. Pellentesque diam volutpat commodo sed egestas egestas fringilla phasellus faucibus. Nibh tellus molestie nunc non blandit massa enim nec.
+              </p>
+            </div>
+          </li>
+
+        </ul>
+
+      </div>
+    </section><!-- End F.A.Q Section -->
+    <!-- ======= Cta Section ======= -->
+    <section id="cta" class="cta">
+      <div class="container">
+
+        <div class="text-center">
+          <h3>Conclusion</h3>
+          <p> Going outdoor and exploring nature has become a pastime for more people because of virtual work. Now with the aid of AI you can more closely identify genera of mushrooms, helping you stay safe. There is a new wave of AR exploration and our program will provide a mini forager at your finger tips.</p>
+        </div>
+
+      </div>
+    </section><!-- End Cta Section -->
+    <!-- ======= Team Section ======= -->
+    <section id="team" class="team">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Masked Gorillas</h2>
+          <!--<h3>Our <span>Team</span></h3>-->
+          <p> We are a group of students in AI camp Batch D Computer Vision Division with Chunjiang (Jonathan) Mou as our instructor. We developed the Mushroom AI Detections as a 3-week project to try and help people.&#128522 </p>
+        </div>
+
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            <div class="member">
+              <div class="member-img">
+                <!--<img src="assets/img/pallavi3.jpg" class="img-fluid" width = 475 height=475 alt="">-->
+                 <img src="{{ url_for('static', filename='assets/img/pallavi3.jpg')}}"  class="img-fluid" width = 475 height=475 alt="">
+<!--                 <div class="social">
+                  <a href=""><i class="bi bi-twitter"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div> -->
+              </div>
+              <div class="member-info">
+                <h4>Pallavi Kamat</h4>
+                <span>Pallavi is a rising junior from Seattle, Washington. Along with her love for AI and coding in general, she is a self-taught artist who works mainly with charcoal and acrylics. </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            <div class="member">
+              <div class="member-img">
+                <img src="{{ url_for('static', filename='assets/img/alex-01 resized.jpg')}}"  class="img-fluid" width = 475 height=475 alt="">
+                <div class="social">
+                  <a href="https://www.linkedin.com/in/alex-dang-751653247/"><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Alex Dang</h4>
+                <span>Alex is a freshmen in college. He is located in San Francisco, California.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            <div class="member">
+              <div class="member-img">
+<!--                 <img src="assets/img/omar resized.jpg" class="img-fluid" width = 475 height=475 alt=""> -->
+                 <img src="{{ url_for('static', filename='assets/img/omar resized.jpg')}}"  class="img-fluid" width = 475 height=475 alt="">
+<!--                 <div class="social">
+                  <a href=""><i class="bi bi-twitter"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div> -->
+              </div>
+              <div class="member-info">
+                <h4>Omar Mustafa</h4>
+                <span>Omar is a rising senior from Los Angeles, California. He loves creating projects with coding and AI. </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            <div class="member">
+              <div class="member-img">
+                <!--<img src="assets/img/team/team-4.jpg" class="img-fluid" width = 475 height=475 alt="">-->
+                <img src="{{ url_for('static', filename='assets/img/brandonphoto.jpg')}}"  class="img-fluid" width = 475 height=475 alt="">
+<!--                 <div class="social">
+                  <a href=""><i class="bi bi-twitter"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div> -->
+              </div>
+              <div class="member-info">
+                <h4>Brandon Ake</h4>
+                <span>Brandon is a rising junior from Redwood City, California. He is especially interested in developing AI, as he believes it is the logical next step towards sustainable future. </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            <div class="member">
+              <div class="member-img">
+              <!--  <img src="assets/img/Keegan's image.jpg" class="img-fluid" width="475" height="475"  alt=""> -->
+                <img src="{{ url_for('static', filename='assets/img/Keegan.jpg')}}"  class="img-fluid" width = 475 height=475 alt="">
+<!--                 <div class="social">
+                  <a href=""><i class="bi bi-twitter"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div> -->
+              </div>
+              <div class="member-info">
+                <h4>Keegan Melcher</h4>
+                <span>I'm a junior from Vancouver, Washington. I believe AI will be a valuable resource now and in the future. </span>
+              </div>
+             </div>
+           </div>
+          
+          
+            <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+              <div class="member">
+                <div class="member-img">
+<!--                   <img src="assets/img/team/team-4.jpg" width = 475 height=475 class="img-fluid" alt=""> -->
+                  <img src="{{ url_for('static', filename='assets/img/jonathan.jpeg')}}"  class="img-fluid" width = 475 height=475 alt="">
+<!--                   <div class="social">
+                    <a href=""><i class="bi bi-twitter"></i></a>
+                    <a href=""><i class="bi bi-facebook"></i></a>
+                    <a href=""><i class="bi bi-instagram"></i></a>
+                    <a href=""><i class="bi bi-linkedin"></i></a>
+                </div> -->
+              </div>
+                <div class="member-info">
+                <h4>Jonathan Mou</h4>
+                <span>My name is Chunjiang Mou (Jonathan), I am a Master of ICME Data Science at Stanford University. Glad to be here!</span>
+              </div>
+          </div>
+        </div>
+          
+          
+       </div>
+
+      </div>
+    </section><!-- End Team Section -->
+
+    <!-- ======= Contact Section ======= -->
+    <!-- 
+    <section id="contact" class="contact">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Contact</h2>
+          <h3>Contact <span>Us</span></h3>
+          <p></p>
+        </div>
+
+        <div>
+          <iframe style="border:0; width: 100%; height: 270px;" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0" allowfullscreen></iframe>
+        </div>
+
+        <div class="row mt-5">
+
+          <div class="col-lg-4">
+            <div class="info">
+              <div class="address">
+                <i class="bi bi-geo-alt"></i>
+                <h4>Location:</h4>
+                <p>2627 Hanover St, Palo Alto, CA 94304</p>
+              </div>
+
+              <div class="email">
+                <i class="bi bi-envelope"></i>
+                <h4>Email:</h4>
+                <p>info@example.com</p>
+              </div>
+
+              <div class="phone">
+                <i class="bi bi-phone"></i>
+                <h4>Call:</h4>
+                <p>+1 (626) 688-7921s</p>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="col-lg-8 mt-5 mt-lg-0">
+
+            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+              <div class="row">
+                <div class="col-md-6 form-group">
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                </div>
+                <div class="col-md-6 form-group mt-3 mt-md-0">
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                </div>
+              </div>
+              <div class="form-group mt-3">
+                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+              </div>
+              <div class="form-group mt-3">
+                <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+              </div>
+              <div class="my-3">
+                <div class="loading">Loading</div>
+                <div class="error-message"></div>
+                <div class="sent-message">Your message has been sent. Thank you!</div>
+              </div>
+              <div class="text-center"><button type="submit">Send Message</button></div>
+            </form>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Contact Section -->
+ 
+  </main><!-- End #main -->
+  
+  <!-- ======= Footer ======= -->
+   </main>
+    <!-- End #main -->
+    <!-- <div class="col-lg-4" style = "position:relative; left:80px; top:2px;">
+            <div class="portfolio-info">
+              <h3>Project information</h3>
+              <ul>
+                <li><strong>Category</strong>: Mushroom Classification</li>
+                <li><strong>Client</strong>: ASU Company</li>
+                <li><strong>Project date</strong>: 8 August, 2022</li>
+                <li><strong>Project URL</strong>: <a href="#">www.example.com</a></li>
+              </ul>
+       </div>
+      </div>-->
+  <!-- ======= Footer ======= -->
+  <div style = "position:relative;">
+
+    <footer id="footer">
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <h3>AI Camp</h3>
+            <p>
+              2627 Hanover St, <br>
+              Palo Alto, CA 94304<br>
+              United States <br><br>
+              <strong>Phone:</strong> +1 (626) 688-7921<br>
+              <strong>Email:</strong> hello@ai-camp.org<br>
+            </p>
+          </div>
+
+          <div class="col-lg-2 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="https://cocalc13.ai-camp.dev/ae71ba3b-b27b-4c8c-b633-32b7ee6e2389/port/12349/">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#about">About</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#pipeline">Pipeline</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#data">Our Data</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#model">Modeling</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#evaluation">Evaluation</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#cta">Conclusion</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#team">Our Team</a></li>
+
+            </ul>
+          </div>
+           
+          <!--
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Our Product</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#Demo">Web Design</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#Demo">Web Development</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#Demo">Product Management</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#Demo">Marketing</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#Demo">Graphic Design</a></li>
+            </ul>
+          </div> -->
+
+           <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Our Product</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
+            </ul>
+          </div>
+          
+          
+          <div class="col-lg-4 col-md-6 footer-logo" style = "display:flex">
+            <img src="{{ url_for('static', filename='assets/img/ai camp logo.jpg')}}"  class="img-fluid" alt="AIcamplogo">
+          </div>
+           
+         <!--<div class="col-lg-3 col-md-6 footer-logo" style = "display:flex">
+          <img src="{{ url_for('static', filename='assets/img/masked_gorillas.jpeg')}}"  class="img-fluid" alt="MaskedGorillaslogo">
+           </div>-->
+            
+
+          <!--         
+          <div class="col-lg-4 col-md-6 footer-newsletter">
+            <h4>Join Our Newsletter</h4>
+            <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
+            <form action="" method="post">
+              <input type="email" name="email"><input type="submit" value="Subscribe">
+            </form>
+          </div> -->
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container d-md-flex py-4">
+
+      <div class="me-md-auto text-center text-md-start">
+        <div class="copyright">
+          <br>&copy; Copyright <strong><span>AI Camp</span></strong>. All Rights Reserved
+        </div>
+        <div class="credits">
+          <!-- All the links in the footer should remain intact. -->
+          <!-- You can delete the links only if you purchased the pro version. -->
+          <!-- Licensing information: https://bootstrapmade.com/license/ -->
+          <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/tempo-free-onepage-bootstrap-theme/ -->
+          Designed by <a href="https://www.ai-camp.org/">AI Camp Masked Gorillas Team</a>
+        </div>
+      </div>
+      <div class="social-links text-center text-md-right pt-3 pt-md-0">
+        <a href="https://www.facebook.com/aicampdotorg/?view_public_for=849707208732789" class="facebook"><i class="bx bxl-facebook"></i></a>
+        <a href="https://www.instagram.com/aicamp1/" class="instagram"><i class="bx bxl-instagram"></i></a>
+        <a href="https://www.youtube.com/channel/UCUGJzo5EwViLGpAgYphNyzg" class="google-plus"><i class="bi bi-youtube"></i></a>
+        <a href="https://www.linkedin.com/company/ai-camp/" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+      </div>
+    </div>
+
+  </footer>
+ </div>
+    <!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <!--<script src="{{ url_for('static', filename='assets/vendor/purecounter/purecounter_vanilla.js') }}" media="screen"></script>-->
+  <!--<script src="{{ url_for('static', filename='assets/vendor/aos/aos.js') }}" media="screen"></script>-->
+  
+  
+  <script src="{{ url_for('static', filename='assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}" media="screen"></script>
+  <script src="{{ url_for('static', filename='assets/vendor/glightbox/js/glightbox.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='assets/vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='assets/vendor/swiper/swiper-bundle.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='assets/vendor/php-email-form/validate.js') }}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{{ url_for('static', filename='assets/js/main.js') }}"></script>
+  
+  
+  <!-- Make the upload button works -->
+  <script>
+  // added to get upload with a button working
+        document.getElementById('seefood_button').addEventListener('click', openDialog);
+
+        function openDialog() {
+            document.getElementById('seefood_input_field').click();
+        }
+  </script>
+  <script type="text/javascript">
+        $(document).ready(function() {
+            $("#spinner").bind("ajaxSend", function() {
+                $(this).show();
+            }).bind("ajaxStop", function() {
+                $(this).hide();
+            }).bind("ajaxError", function() {
+                $(this).hide();
+            });
+            // seefood_input_field
+            $('#seefood_button').click(function() {
+
+            });
+        });
+  </script>
+
+</body>
+
+</html>
